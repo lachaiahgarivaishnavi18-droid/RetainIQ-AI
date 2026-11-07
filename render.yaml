@@ -1,0 +1,29 @@
+# Prepared backend hosting blueprint. Applying it creates a paid persistent service.
+# Only one instance: SQLite application DB and LangGraph checkpoints share this disk.
+services:
+  - type: web
+    name: retainiq-api
+    runtime: docker
+    plan: standard
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /api/health
+    disk:
+      name: retainiq-runtime
+      mountPath: /app/runtime
+      sizeGB: 5
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: RUNTIME_DIR
+        value: /app/runtime
+      - key: DATABASE_URL
+        value: sqlite:////app/runtime/retainiq.db
+      - key: JWT_SECRET
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: LLM_BASE_URL
+        value: ""
+      - key: LLM_MODEL
+        value: ""

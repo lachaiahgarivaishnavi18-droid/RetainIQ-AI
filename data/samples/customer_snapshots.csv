@@ -1,0 +1,4 @@
+customer_id,total_orders,total_spend,days_since_last_purchase,complaints_count,email_engagement,membership_status,marketing_consent,churn_label
+SAMPLE-001,12,860,32,0,0.65,Silver,true,0
+SAMPLE-002,3,145,145,2,0.12,Standard,false,1
+SAMPLE-003,25,2300,12,0,0.82,Gold,true,0

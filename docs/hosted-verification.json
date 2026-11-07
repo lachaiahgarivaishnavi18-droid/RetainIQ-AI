@@ -1,0 +1,119 @@
+{
+  "backend": "https://retainiq-api-production.up.railway.app/api",
+  "steps": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/customers",
+      "status": 401
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/customers",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/auth/me",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/data/demo",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/churn/train",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/churn/predict/batch",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/churn/high-risk",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/explainability/global",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/explainability/customer/DEMO-958d-0225",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/segmentation/run",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/agents/run",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/assistant/query",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/reports/generate",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/reports/1/export?format=csv",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/analytics",
+      "status": 200
+    }
+  ],
+  "selected_model": "Gradient Boosting",
+  "model_version": "632399bfb2ae",
+  "held_out_test": {
+    "accuracy": 0.8611111111111112,
+    "precision": 0.7,
+    "recall": 0.5,
+    "f1": 0.5833333333333334,
+    "roc_auc": 0.770935960591133,
+    "pr_auc": 0.47294683797891496,
+    "specificity": 0.9482758620689655,
+    "brier_score": 0.13861218999947741,
+    "confusion_matrix": [
+      [
+        55,
+        3
+      ],
+      [
+        7,
+        7
+      ]
+    ]
+  },
+  "customers": 360,
+  "scored_customers": 360,
+  "agent_status": "awaiting_review",
+  "customer_id": "DEMO-958d-0225",
+  "execution_id": "9952e775381b4d64a5f9b17e2a4d2a19",
+  "report_id": 1,
+  "observed_campaign_outcomes_created": 0
+}
